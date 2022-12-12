@@ -1,0 +1,1 @@
+define L = Character("小猫")
