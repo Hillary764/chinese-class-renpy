@@ -12,6 +12,8 @@ default haowanEnd = 0
 default numberOfTurns = 5
 default turnCount = 0
 
+default lastAction = ""
+
 
 
 # The game starts here.
@@ -36,7 +38,7 @@ label start:
     # images directory to show it.
 
     #scene bg room
-    scene Untitled
+    scene bg Untitled
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images

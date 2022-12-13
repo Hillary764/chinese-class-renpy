@@ -13,7 +13,7 @@ menu changgeMenu:
         if personAppears:
             L "我的家人！我爱你！你喜欢我的歌吗？"
             J "小猫！你唱歌唱得太好听！"
-            J "你有什么事？"
+            J "你吃了吗？"
             return
         return
 
@@ -32,4 +32,23 @@ menu changgeMenu:
             J "小猫。。。 你唱歌唱得太多了。。。"
             J "你有什么事？"
             return
+        return
+
+menu changAgain:
+    L "再唱歌？"
+
+    "唱歌":
+        L "我应该唱歌唱得越来越漂亮了。。。"
+        L "喵喵。。。 喵喵喵！！"
+        L "{size=+10} 喵喵！{/size}"
+        L "{size=+15} {b}喵喵喵！！{/b} {/size}"
+        $ personAppears = True
+        J "好好好。。。 等一下。。。"
+        J "小猫，你唱歌唱得太多了。。。"
+        J "你有什么事？"
+        return
+    
+    "不唱歌":
+        L "我的家人恨我！我不要给他们唱歌"
+        $ personAppears = False
         return
