@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/generalMenus.rpy", line 19, in script
-    J "小猫。。。 你唱歌唱得太多了。。。"
-Exception: Sayer 'J' is not defined.
+  File "game/houseMenus.rpy", line 17, in script
+    if lastAction = "shuijiao":
+SyntaxError: invalid syntax (game/houseMenus.rpy, line 17)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/generalMenus.rpy", line 19, in script
-    J "小猫。。。 你唱歌唱得太多了。。。"
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'J' is not defined.
+  File "game/houseMenus.rpy", line 17, in script
+    if lastAction = "shuijiao":
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 1090, in py_eval
+    code = py_compile(code, 'eval')
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 1027, in py_compile
+    raise e
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 979, in py_compile
+    raise orig_e
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 972, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/houseMenus.rpy, line 17)
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 LucyQuest 1.0
-Mon Dec 12 20:38:55 2022
+Tue Dec 13 15:30:52 2022

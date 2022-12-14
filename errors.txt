@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/menus.rpy", line 19: Only one say menuitem may exist per menu.
-    L "去饭馆":
-           ^
+File "game/generalMenus.rpy", line 16: end of line expected.
+    show lucy talk with dissolve at right
+                                 ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Dec 12 12:02:34 2022
+Wed Dec 14 13:44:48 2022
