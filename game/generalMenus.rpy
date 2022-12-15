@@ -75,20 +75,10 @@ menu changAgain:
 label incrementTurns:
     python:
         turnCount += 1
-        match lastAction:
-            case "chifan":
-                leiEnd += 1
-
-            case "shuijiao":
-                leiEnd += 1
-            
-
-            case "aijiaren":
-                jiarenEnd += 1
-            
-            case _:
-                pass
-
+        if lastAction == "chifan" or lastAction == "shuijiao":
+            leiEnd += 1
+        elif lastAction == "aijiaren":
+            jiarenEnd += 1
     if turnCount > numberOfTurns:
         jump ending
     L "for testing... turnCount = [turnCount]"

@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/generalMenus.rpy", line 16: end of line expected.
-    show lucy talk with dissolve at right
-                                 ^
+File "game/generalMenus.rpy", line 78: invalid syntax
+    match lastAction:
+           ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Dec 14 13:44:48 2022
+Wed Dec 14 18:36:53 2022

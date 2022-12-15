@@ -33,3 +33,10 @@ image lucy singing fast:
 define J = Character("家人")
 
 define E = Character("高猫")
+
+image erebus talking:
+    "erebus neutral.png"
+    pause 0.3
+    "erebus talk.png"
+    pause 0.3
+    repeat

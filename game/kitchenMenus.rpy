@@ -70,8 +70,38 @@ menu erebusFoodQuestion:
     E "你想吃什么？"
 
     "吃肉":
+        show lucy sit at right
+        if shucai:
+            $ pass
+        else:
+            show erebus talking at left
+            E "哎呀，小猫！你应该吃很营养的菜。"
+            E "蔬菜很营养。"
+            E "我们有各种蔬菜。红色的，绿色的，黄色的。。。"
+            E "你喜欢吃白菜吗？"
+            E "白菜很好吃可是白菜是绿色的，不是白色的。。。"
+            E "黄瓜，西红柿，哈密瓜，都很好吃。"
+            show erebus neutral at left
+            show lucy talking at right
+            L "哈密瓜？哈密瓜是蔬菜？"
+            show lucy sit at right
+            show erebus talking at left
+            E "对，对。哈密瓜最好吃的蔬菜。"
+            show erebus neutral at left
+            show lucy talking at right
+            L "好。。。"
+            show lucy sit at right
+            show erebus talking at left
+            E "我有一个主意！"
+            E "我们的家人给你做很营养的饭！"
+            E "我给他们打电话。"
+            E "喵喵喵！！！喵喵喵！！！"
+            E "看！一个家人来这里！"
+            E "我正好有事"
+            E "不好意思，再见！"
+            hide erebus
+            jump personKitchen
 
-        
 
 
 menu personKitchen:
