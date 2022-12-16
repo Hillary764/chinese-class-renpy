@@ -27,6 +27,7 @@ default dapai = False
 
 
 label start:
+    
 
     menu:
         "你想玩电子游戏玩得怎么样？"
@@ -43,7 +44,7 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
-
+    stop music
     #scene bg room
     scene bg bedroom
 
