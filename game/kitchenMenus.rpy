@@ -101,7 +101,9 @@ menu erebusFoodQuestion:
             E "我有一个主意！"
             E "我们的家人给你做很营养的饭！"
             E "我给他们打电话。"
+            play music "audio/nyancat.mp3"
             E "喵喵喵！！！喵喵喵！！！"
+            stop music
             E "看！一个家人来这里！"
             E "我正好有事"
             E "不好意思，再见！"
@@ -114,7 +116,9 @@ menu erebusFoodQuestion:
         E "我有一个主意！"
         E "我们的家人给你做很营养的饭！"
         E "我给他们打电话。"
+        play music "audio/nyancat.mp3"
         E "喵喵喵！！！喵喵喵！！！"
+        stop music
         E "看！一个家人来这里！"
         E "我正好有事"
         E "不好意思，再见！"

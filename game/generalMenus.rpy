@@ -6,7 +6,9 @@ menu changgeMenu:
         show lucy talking
         L "我唱歌唱得最好听！"
         show lucy singing slowly
+        play music "audio/nyancat.mp3"
         L "喵喵！喵喵喵！"
+        stop music
         python:
             personAppears = False
             if renpy.random.randint(0,10) >= 6:
@@ -30,9 +32,11 @@ menu changgeMenu:
         show lucy talking
         L "我要跟我的家人聊天！！！"
         show lucy singing mid
+        play music "audio/nyancat.mp3"
         L "喵喵！！ 喵喵喵！！！"
         L "喵喵喵！喵喵喵！！ 喵喵！ 喵喵喵喵！"
         L "喵喵！喵喵喵喵！喵喵喵！！喵喵喵！！！ 喵喵！ 喵喵喵喵！！"
+        stop music
         python:
             personAppears = False
             if renpy.random.randint(0,10) >= 3:
@@ -59,9 +63,11 @@ menu changAgain:
         show lucy talking
         L "我应该唱歌唱得越来越漂亮了。。。"
         show lucy singing fast
+        play music "audio/nyancat.mp3"
         L "喵喵。。。 喵喵喵！！"
         L "{size=+10} 喵喵！{/size}"
         L "{size=+15} {b}喵喵喵！！{/b} {/size}"
+        stop music
         $ personAppears = True
         $ jiarenEnd -= 1
         show lucy sit at right with dissolve
@@ -88,7 +94,7 @@ label incrementTurns:
             haowanEnd += 1
     if turnCount > numberOfTurns:
         jump ending
-    L "for testing... turnCount = [turnCount]"
+    # L "for testing... turnCount = [turnCount]"
     return
 
 label ending:
@@ -106,8 +112,3 @@ label ending:
         "GOOD END: 你喜欢好玩儿的事！"
     $ MainMenu(confirm=False)()
 
-# default pengyouEnd = 0
-# default leiEnd = 0
-
-# default jiarenEnd = 0
-# default haowanEnd = 0
