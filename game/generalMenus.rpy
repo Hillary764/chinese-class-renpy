@@ -13,7 +13,7 @@ menu changgeMenu:
             personAppears = False
             if renpy.random.randint(0,10) >= 6:
                 personAppears = True
-                jiarenEnd += 2
+                jiarenEnd += 1
         if personAppears:
             show lucy talking at right 
             show person neutral at left with dissolve
@@ -41,7 +41,6 @@ menu changgeMenu:
             personAppears = False
             if renpy.random.randint(0,10) >= 3:
                 personAppears = True
-                jiarenEnd += 1
         if personAppears:
             show lucy talking at right with dissolve
             show person neutral at left with dissolve

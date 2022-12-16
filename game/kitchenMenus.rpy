@@ -32,6 +32,8 @@ menu emptyKitchen:
         L "我很饿。我不想等。"
         $ lastAction = "chifan"
         call incrementTurns
+        scene black with dissolve
+        pause 0.5
         jump enterKitchen
     
     "去别的地方":
@@ -47,6 +49,7 @@ menu emptyKitchen:
 
             "进城":
                 L "我想玩"
+                jump enterRoom
     
 
 
@@ -237,11 +240,11 @@ label alcohol:
         J "小猫。。。 你多大了？"
         
         "我三岁":
-            J "..."
+            J "。。。"
             $ age3 = True
 
         "我五岁":
-            J "..."
+            J "。。。"
             $ age5 = True
     if age3 and age5:
         J "你三岁还是你五岁？"
@@ -249,7 +252,7 @@ label alcohol:
         J "我也不知道。"
         J "可是你不可以喝酒，而且猫不能喝酒。"
     J "你不能喝酒。你是一只猫。"
-    J "我给你来一杯水，好吗？"
+    J "我给你来一杯冰水，好吧？"
     L "好。。。"
     $ lastAction = "chifan"
     call incrementTurns
