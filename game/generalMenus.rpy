@@ -61,7 +61,7 @@ menu changAgain:
 
     "唱歌":
         show lucy talking
-        L "我应该唱歌唱得越来越漂亮了。。。"
+        L "我应该唱歌唱得越来越好听了。。。"
         show lucy singing fast
         play music "audio/nyancat.mp3"
         L "喵喵。。。 喵喵喵！！"
