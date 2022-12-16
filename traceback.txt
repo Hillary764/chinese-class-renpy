@@ -1,28 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/houseMenus.rpy", line 17, in script
-    if lastAction = "shuijiao":
-SyntaxError: invalid syntax (game/houseMenus.rpy, line 17)
+Compiling ATL code at game/roomMenus.rpy:44
+  File "game/roomMenus.rpy", line 43, in script
+    show lucy sit at right:
+Exception: Expression '0.5' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/houseMenus.rpy", line 17, in script
-    if lastAction = "shuijiao":
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 1090, in py_eval
-    code = py_compile(code, 'eval')
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 1027, in py_compile
-    raise e
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 979, in py_compile
-    raise orig_e
-  File "D:\renpy\renpy-8.0.3-sdk\renpy\python.py", line 972, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/houseMenus.rpy, line 17)
+  File "game/roomMenus.rpy", line 43, in script
+    show lucy sit at right:
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
+    renpy.config.show(name,
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\exports.py", line 712, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\display\core.py", line 1165, in add
+    thing.visit_all(lambda d : None)
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\display\core.py", line 572, in visit_all
+    for d in self.visit():
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\atl.py", line 614, in visit
+    block = self.compile()
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\atl.py", line 521, in compile
+    block = self.atl.compile(self.context)
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\atl.py", line 721, in compile
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\atl.py", line 721, in <listcomp>
+    statements = [ i.compile(ctx) for i in self.statements ]
+  File "D:\renpy\renpy-8.0.3-sdk\renpy\atl.py", line 1024, in compile
+    raise Exception("Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr)
+Exception: Expression '0.5' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 LucyQuest 1.0
-Tue Dec 13 15:30:52 2022
+Thu Dec 15 19:15:49 2022

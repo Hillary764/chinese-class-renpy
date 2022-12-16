@@ -40,6 +40,7 @@ menu houseOptions:
 
             "进城":
                 L "我想玩"
+                jump enterRoom
 
 
 menu sleepOptions:
@@ -60,21 +61,37 @@ menu sleepOptions:
         L "我现在睡觉"
         jump lucySleeps
 
-menu personInHouse:
-    
-    J "你唱歌。为什么？"
-    
-    "我想睡觉":
-        J "好。。。"
-        L "随便坐。"
-        J "好。。。？"
-        jump lucySleeps
-    
-    "我想你摸摸我":
-        J "你太可爱！ 我很喜欢摸摸猫！"
-        $ lastAction = "aijiaren"
-        call incrementTurns
-        jump houseOptions
+label personInHouse:
+    show person neutral at left with dissolve
+    menu:
+        J "你唱歌。为什么？"
+        
+        "我想睡觉":
+            J "好。。。"
+            show person neutral
+            show lucy talking
+            L "随便坐。"
+            show person talking
+            show lucy sit
+            J "好。。。？"
+            hide person
+            hide lucy
+            show person sit at center
+            J "。。。"
+            scene black with dissolve
+            pause 0.5
+            scene bg bedroom
+            show lucy sit at right
+            $ lastAction = "aijiaren"
+            call incrementTurns
+            jump houseOptions
+        
+        "我想你摸摸我":
+            J "你太可爱！ 我很喜欢摸摸猫！"
+            $ lastAction = "aijiaren"
+            call incrementTurns
+            hide person
+            jump houseOptions
 
 label lucySleeps:
     show lucy sleep at right
@@ -82,6 +99,7 @@ label lucySleeps:
     scene black with dissolve
     pause 0.5
     scene bg bedroom with dissolve
+    show lucy sit at right
     $ lastAction = "shuijiao"
     call incrementTurns
     jump houseOptions

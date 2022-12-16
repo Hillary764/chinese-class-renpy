@@ -13,9 +13,11 @@ menu changgeMenu:
                 personAppears = True
                 jiarenEnd += 2
         if personAppears:
-            show lucy talking at right with dissolve 
+            show lucy talking at right 
+            show person neutral at left with dissolve
             L "我的家人！我爱你！你喜欢我的歌吗？"
             show lucy sit at right
+            show person talking
             J "小猫！你唱歌唱得太好听！"
             J "你吃了吗？"
             return
@@ -38,8 +40,10 @@ menu changgeMenu:
                 jiarenEnd += 1
         if personAppears:
             show lucy talking at right with dissolve
+            show person neutral at left with dissolve
             L "我的家人！我爱你！"
             show lucy sit at right
+            show person talking
             J "小猫。。。 你唱歌唱得太多了。。。"
             J "你有什么事？"
             return
@@ -62,6 +66,7 @@ menu changAgain:
         $ jiarenEnd -= 1
         show lucy sit at right with dissolve
         J "好好好。。。 等一下。。。"
+        show person talking at left
         J "小猫，你唱歌唱得太多了。。。"
         J "你有什么事？"
         return
@@ -79,11 +84,30 @@ label incrementTurns:
             leiEnd += 1
         elif lastAction == "aijiaren":
             jiarenEnd += 1
+        elif lastAction == "wan":
+            haowanEnd += 1
     if turnCount > numberOfTurns:
         jump ending
     L "for testing... turnCount = [turnCount]"
     return
 
 label ending:
-    L "我很能干"
-    return
+    scene black
+    L "我很忙。"
+    if jiarenEnd + pengyouEnd < 0:
+        "BAD END: 你打搅大家。"
+    elif pengyouEnd >= leiEnd and pengyouEnd >= jiarenEnd and pengyouEnd >= haowanEnd:
+        "GOOD END: 你和高猫是很好的朋友！"
+    elif leiEnd >= jiarenEnd and leiEnd >= haowanEnd:
+        "NEUTRAL END: 你太累了！"
+    elif jiarenEnd >= haowanEnd:
+        "GOOD END: 你的家人爱你！"
+    else:
+        "GOOD END: 你喜欢好玩儿的事！"
+    $ MainMenu(confirm=False)()
+
+# default pengyouEnd = 0
+# default leiEnd = 0
+
+# default jiarenEnd = 0
+# default haowanEnd = 0

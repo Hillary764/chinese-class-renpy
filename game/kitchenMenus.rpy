@@ -55,25 +55,31 @@ menu erebusEating:
 
     "滚" if pengyouEnd <= 0:
         $ pengyouEnd -= 1
+        show erebus talking
         E "你不客气，小猫。"
         E "我去别的地方。"
+        hide erebus
         jump emptyKitchen
     
     "高猫，我很饿！":
-        E "你想吃什么？"
-        
+        jump erebusFoodQuestion      
     
-    "不说。我应该去别的地方":
-        L ""
+    "不说。我应该去别的地方。":
+        jump kitchenMovePlaces
 
 menu erebusFoodQuestion:
     E "你想吃什么？"
 
-    "吃肉":
+    "吃肉。我是猫。":
         show lucy sit at right
         if shucai:
-            $ pass
+            show erebus talking
+            E "你不想吃蔬菜？"
+            E "好。现在我有事，所以我应该出去。"
+            hide erebus
+            jump emptyKitchen
         else:
+            $ shucai = True
             show erebus talking at left
             E "哎呀，小猫！你应该吃很营养的菜。"
             E "蔬菜很营养。"
@@ -101,29 +107,63 @@ menu erebusFoodQuestion:
             E "不好意思，再见！"
             hide erebus
             jump personKitchen
+    "吃蔬菜？" if shucai:
+        $ pengyouEnd += 1
+        show erebus talking at left
+        E "蔬菜很好吃！"
+        E "我有一个主意！"
+        E "我们的家人给你做很营养的饭！"
+        E "我给他们打电话。"
+        E "喵喵喵！！！喵喵喵！！！"
+        E "看！一个家人来这里！"
+        E "我正好有事"
+        E "不好意思，再见！"
+        hide erebus
+        jump personKitchen
 
 
 
-menu personKitchen:
-    L "我该怎么办？"
+label personKitchen:
+    show person neutral at left
+    menu:
+        L "我该怎么办？"
 
-    "来点什么饮料":
-        jump drinkMenu
-    
-    "来点什么菜":
-        jump foodMenu
+        "来点什么饮料":
+            jump drinkMenu
+        
+        "来点什么菜":
+            jump foodMenu
+        
+        "去别的地方":
+            jump kitchenMovePlaces
 
 
 
 menu drinkMenu:
     L "我想喝什么？"
 
-    "牛奶":
+    "奶茶":
         J "好"
         J "别喝很多的牛奶"
+        scene black
+        pause 0.4
+        scene bg kitchen
+        show lucy sit at right
+        show person neutral at left
+        $ lastAction = "chifan"
+        call incrementTurns
+        jump enterKitchen
 
     "水":
         J "好"
+        scene black
+        pause 0.4
+        scene bg kitchen
+        show lucy sit at right  
+        show person neutral at left
+        $ lastAction = "chifan"
+        call incrementTurns
+        jump enterKitchen
 
     "啤酒":
         J "啤酒？"
@@ -137,14 +177,50 @@ menu drinkMenu:
 menu foodMenu:
     L "我想吃什么？"
 
-    "牛肉":
-        J "我给你做饭，好吧？"
+    "宫保鸡丁":
+        J "我把鸡肉给你做饭，好吧？"
+        hide person
+        pause 0.3
+        show person talking at left
+        J "饭做好了。尝一下这个。"
+        $ lastAction = "chifan"
+        call incrementTurns
+        scene black
+        pause 0.4
+        scene bg kitchen with dissolve
+        show lucy sit at right
+        jump enterKitchen
 
-    "鸡肉":
-        J "我给你做饭，好吧？"
 
-    "鱼":
-        J "我给你做饭，好吧？"
+    "炒腊肉":
+        J "我把几个肉给你做饭，好吧？"
+        hide person
+        pause 0.3
+        show person talking at left
+        J "饭做好了。尝一下这个。"
+        $ lastAction = "chifan"
+        call incrementTurns
+        scene black
+        pause 0.4
+        scene bg kitchen with dissolve
+        show lucy sit at right
+        jump enterKitchen
+
+    "蔬菜" if shucai:
+        $ pengyouEnd += 1
+        J "蔬菜？"
+        show person neutral at left
+        show lucy talking at right
+        L "蔬菜是营养的，对？"
+        L "我想吃哈密瓜。"
+        show lucy sit
+        J "。。。"
+        show person talking
+        J "哈密瓜？"
+        J "小猫。。。你不能吃蔬菜。哈密瓜不是蔬菜可是你也不能吃哈密瓜。"
+        J "你想吃别的菜？"
+        show person neutral
+        jump foodMenu
 
 label alcohol:
     menu:
@@ -161,9 +237,25 @@ label alcohol:
         J "你三岁还是你五岁？"
         L "我不知道。"
         J "我也不知道。"
-        J "可是你不可以喝酒，而且猫不能喝酒"
+        J "可是你不可以喝酒，而且猫不能喝酒。"
     J "你不能喝酒。你是一只猫。"
     J "我给你来一杯水，好吗？"
     L "好。。。"
     $ lastAction = "chifan"
-    jump personKitchen
+    call incrementTurns
+    jump enterKitchen
+
+menu kitchenMovePlaces:
+    L "去哪儿？"
+
+    "去我的家":
+        L "我一点儿累"
+        scene black with dissolve
+        pause 0.4
+        scene bg bedroom with dissolve
+        show lucy sit at right
+        jump houseOptions
+
+    "进城":
+        L "我想玩"
+        jump enterRoom

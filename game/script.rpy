@@ -20,6 +20,7 @@ default age3 = False
 default age5 = False
 
 default shucai = False
+default dapai = False
 
 
 # The game starts here.
@@ -54,7 +55,7 @@ label start:
 
     # These display lines of dialogue.
 
-    show lucy talking with dissolve
+    show lucy talking at right with dissolve
 
     L "我叫小猫。"
     L "我比别的猫很漂亮，很能干，很有灵气。"

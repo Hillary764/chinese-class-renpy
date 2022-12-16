@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/generalMenus.rpy", line 78: invalid syntax
-    match lastAction:
-           ^
-    
+File "game/roomMenus.rpy", line 44: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    move center
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Dec 14 18:36:53 2022
+Thu Dec 15 19:18:45 2022
