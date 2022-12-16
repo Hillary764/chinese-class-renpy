@@ -14,7 +14,6 @@ default turnCount = 0
 
 default lastAction = ""
 default personAppears = False
-default erebusAppears = False
 
 default age3 = False
 default age5 = False

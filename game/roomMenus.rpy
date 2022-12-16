@@ -49,7 +49,7 @@ label gongfu:
         jump enterRoom
     else:
         show lucy talking
-        L "我的家人很忙。。。"
+        L "我的家人太忙了。。。"
         jump enterRoom
         
 

@@ -259,7 +259,7 @@ menu kitchenMovePlaces:
     L "去哪儿？"
 
     "去我的家":
-        L "我一点儿累"
+        L "我一点儿累。"
         scene black with dissolve
         pause 0.4
         scene bg bedroom with dissolve
@@ -267,5 +267,5 @@ menu kitchenMovePlaces:
         jump houseOptions
 
     "进城":
-        L "我想玩"
+        L "我想玩儿。"
         jump enterRoom

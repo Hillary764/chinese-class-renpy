@@ -35,11 +35,11 @@ menu houseOptions:
             "去哪儿？"
 
             "去饭馆":
-                L "我一点儿饿"
+                L "我一点儿饿。"
                 jump enterKitchen
 
             "进城":
-                L "我想玩"
+                L "我想玩儿。"
                 jump enterRoom
 
 
