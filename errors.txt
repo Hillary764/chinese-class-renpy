@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 16: expected statement.
-    renpy.change_language(chinese)
-                                  ^
+File "game/roomMenus.rpy", line 44: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
+    move center
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Dec 12 10:57:35 2022
+Thu Dec 15 19:18:45 2022
