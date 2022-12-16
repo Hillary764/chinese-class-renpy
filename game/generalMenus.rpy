@@ -21,7 +21,7 @@ menu changgeMenu:
             show lucy sit at right
             show person talking
             J "小猫！你唱歌唱得太好听！"
-            J "你吃了吗？"
+            J "最近如何？"
             return
         show lucy sit
         L "我的家人不在这儿。。。"

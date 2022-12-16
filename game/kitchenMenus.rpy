@@ -187,6 +187,9 @@ menu foodMenu:
         pause 0.3
         show person talking at left
         J "饭做好了。尝一下这个。"
+        show person neutral 
+        show lucy talking
+        L "味道真好。"
         $ lastAction = "chifan"
         call incrementTurns
         scene black
@@ -202,6 +205,9 @@ menu foodMenu:
         pause 0.3
         show person talking at left
         J "饭做好了。尝一下这个。"
+        show person neutral 
+        show lucy talking
+        L "很香。"
         $ lastAction = "chifan"
         call incrementTurns
         scene black
