@@ -89,6 +89,7 @@ label dapai:
             "快地打牌":
                 show lucy dapai fast
                 L "。。。"
+                L "现在我打牌了。"
                 show lucy talking
                 L "你看得懂吗？"
                 show lucy sit
@@ -105,6 +106,8 @@ label dapai:
             
             "慢地打牌":
                 show lucy dapai slowly
+                L "。。。"
+                L "现在我打牌了。"
                 show lucy talking
                 L "你看得懂吗？"
                 show lucy sit
